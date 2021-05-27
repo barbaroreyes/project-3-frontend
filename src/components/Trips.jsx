@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import useFetch from "react-fetch-hook";
 
 const PLACES_TO_VISIT = 'places to visit';
 const ACTIVITY = 'activity';
 
-export default function Products({ setCartItems, cartItems }) {
+export default function Trips({ setCartItems, cartItems }) {
   const [trips] = useState([
     {
       category: ACTIVITY,
