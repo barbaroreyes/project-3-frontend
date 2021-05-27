@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,500;0,600;1,200;1,500&display=swap');
+
+.Header {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    background: orange;
+    height: 40%;
+
+}
+
+.Header__navigation {
+    display:flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem;
+}
+.Header_logo {
+    padding-top: 20px;
+    /* margin-left: 1rem; */
+}
+
+/* .Header__logo a {
+    color: navy;
+    text-decoration: none;
+    font-size: 1.5rem;
+} */
+
+.spacer {
+    flex: 2;
+}
+.Header__navigation-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.Header__navigation-items li {
+    padding: 0 0.5rem;
+}
+
+.Header__navigation-items a {
+    color: navy;
+    text-decoration: none;
+}
+
+.Header__navigation-items a:hover,
+.Header__navigation-items a:active {
+    color: purple;
+}
+
+@media (max-width: 768px) {
+    .Header_navigation-items {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .Header_toggle-button {
+        display: none;
+    }
+        .Header__logo{
+        margin-left: 0px;
+        }
+}
+.toggle-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.toggle-button__line {
+    width: 30px;
+    height: 2px;
+    background: navy;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 1;
+    left: 5;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 100;
+
+}
+
+.side-drawer {
+    display: none;
+    height: 100%;
+    background: white;
+    box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 70px;
+    left: 10px;
+    width: 50%;
+    max-width: 400px;
+    z-index: 200;
+    transform: translateX(-20px);
+    transition: transform 0.3s ease-out;
+    visibility: hidden;
+
+}
+
+.side-drawer.open {
+    transform: translateX(50);
+}
+.side-drawer ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.side-drawer li {
+    margin: 0.5rem 0;
+}
+
+.side-drawer a {
+    color: navy;
+    text-decoration: none;
+    font-size: 1.2rem;
+
+
+}
+
+.side-drawer a:hover,
+.side-drawer a:active {
+    color: red;
+}
+
+@media (min-width: 769) {
+    .side-drawer {
+        display: none;
+    }
+}
