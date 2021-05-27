@@ -7,6 +7,8 @@ import CustomerProfile from "./pages/CustomerProfile";
 import Home from "./pages/Home";
 import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
+import CartItems from '../src/component/CartItems';
+
 
 function App() {
 	/// STATE VARIABLES ///
@@ -54,6 +56,26 @@ function App() {
 		getActiveCustomer(devUserId); // TODO change this to get active user ID from login
 	}, []);
 
+//shopping cart function
+ const PAGE_TRIPS = 'trips';
+ const PAGE_CARTITEMS = 'cartItems';
+
+function App() {
+ const [cartItems, setCartItems] = useState([]);
+  const [page, setPage] = useState(PAGE_TRIPS);
+
+   const navigateTo = (nextPage) => {
+     setPage(nextPage);
+   };
+   const getCartTotal = () => {
+    return cartItems.reduce(
+      (sum, { quantity }) => sum + quantity,
+      0
+    );
+   };
+//shopping cart function
+
+
 	return (
 		<div className="App">
 			<Switch>
@@ -76,61 +98,24 @@ function App() {
 					<Booking />
 				</Route>
 			</Switch>
+		
+		
+			<div>
+			<header>
+				<button onClick={() => navigateTo(PAGE_CARTITEMS)}>Go to Cart ({getCartTotal()})
+				</button>
+
+				<button onClick={() => navigateTo(PAGE_TRIPS)}>
+				View Trips
+				</button>
+			</header>
+		
+			{page === PAGE_TRIPS && (
+				<Trips cartItems={cartItems} setCartItems={setCartItems} />
+			)}
+			</div>
 		</div>
 	);
 }
 
 export default App;
-
-
-// import React, { useState } from 'react';
-// import './App.css';
-// import Trips from './component/Trips';
-// import CartItems from '../src/component/CartItems';
-
-
-// const PAGE_TRIPS = 'trips';
-// const PAGE_CARTITEMS = 'cartItems';
-
-// function App() {
-//   const [cartItems, setCartItems] = useState([]);
-//   const [page, setPage] = useState(PAGE_TRIPS);
-
-//   const navigateTo = (nextPage) => {
-//     setPage(nextPage);
-//   };
-
-//   const getCartTotal = () => {
-//     return cartItems.reduce(
-//       (sum, { quantity }) => sum + quantity,
-//       0
-//     );
-//   };
-
-  
-//   return (
-
-//     <div className="App">
-//       <header>
-//         <button onClick={() => navigateTo(PAGE_CARTITEMS)}>Go to Cart ({getCartTotal()})
-//         </button>
-
-//         <button onClick={() => navigateTo(PAGE_TRIPS)}>
-//           View Trips
-//         </button>
-//       </header>
- 
-//       {page === PAGE_TRIPS && (
-//         <Trips cartItems={cartItems} setCartItems={setCartItems} />
-//       )}
-      
-      
-//       </div>
-//   );
-// }
-
-// export default App;
-
-  
-  
-  

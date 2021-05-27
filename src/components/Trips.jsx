@@ -5,22 +5,27 @@ const PLACES_TO_VISIT = 'places to visit';
 const ACTIVITY = 'activity';
 
 export default function Trips({ setCartItems, cartItems }) {
-  const [trips] = useState([
-    {
-      category: ACTIVITY,
-      name: 'Activity',
-      cost: 2.99,
-      image:
-      "https://bn1304files.storage.live.com/y4mGc-ddj31qT21Y4-cD4qaq3n5l0pefkuNpHo73CiPbWjcrtVfLnNTHcDjHzgLcEgco5HiZasvrmt4aP0gtR2trIBBkRT6suaXhMd6jzSxntdboF_G1SHRIlOVczdo-2u_39h68UgNe4ofYCbgULr7Qj8OZGwrJTi9J-wOP3TYLyFYSkY9CIeG5RRa1NxbrERa?width=256&height=256&cropmode=none",
-    },
-    {
-      category: PLACES_TO_VISIT,
-      name: 'Cuba1',
-      cost: 19.99,
-      image:
-      "https://bn1304files.storage.live.com/y4mi4uGKC_rU450rqLVq_MbnYKQTOTOIIoXeGe8rKN6DcsqKrSOS2FxDY82jR-_vmv-_-jJMN3tnUDhJCMkH0L-srbHPux73pUUb12dZGfhJiqXdH65P563J02aKqVh7faHILLoTKeusC3oojlKNyTEhiLl-dYb48bDdhlQsWayVDeIS8EFG1id81KhY1ZJ87AV?width=256&height=256&cropmode=none",
-    },
-  ]);
+    //useFetch react hook
+    const {isLoading, error, data} = useFetch("");
+        if (isLoading) return "Loading...";
+        if (error) return "Error!";
+
+        //   const [trips] = useState([
+//     {
+//       category: ACTIVITY,
+//       name: 'Activity',
+//       cost: 2.99,
+//       image:
+//       "https://bn1304files.storage.live.com/y4mGc-ddj31qT21Y4-cD4qaq3n5l0pefkuNpHo73CiPbWjcrtVfLnNTHcDjHzgLcEgco5HiZasvrmt4aP0gtR2trIBBkRT6suaXhMd6jzSxntdboF_G1SHRIlOVczdo-2u_39h68UgNe4ofYCbgULr7Qj8OZGwrJTi9J-wOP3TYLyFYSkY9CIeG5RRa1NxbrERa?width=256&height=256&cropmode=none",
+//     },
+//     {
+//       category: PLACES_TO_VISIT,
+//       name: 'Cuba1',
+//       cost: 19.99,
+//       image:
+//       "https://bn1304files.storage.live.com/y4mi4uGKC_rU450rqLVq_MbnYKQTOTOIIoXeGe8rKN6DcsqKrSOS2FxDY82jR-_vmv-_-jJMN3tnUDhJCMkH0L-srbHPux73pUUb12dZGfhJiqXdH65P563J02aKqVh7faHILLoTKeusC3oojlKNyTEhiLl-dYb48bDdhlQsWayVDeIS8EFG1id81KhY1ZJ87AV?width=256&height=256&cropmode=none",
+//     },
+//   ]);
 
   const addToCart = (trip) => {
     let newCart = [...cartItems];
@@ -75,24 +80,4 @@ export default function Trips({ setCartItems, cartItems }) {
 
 
 
-  // const [trips] = useState([
-    //can come from backend
-    // {
-    //   name: "Cuba1",
-    //   cost: 2.99,
-    //   image: "https://bn1304files.storage.live.com/y4mGc-ddj31qT21Y4-cD4qaq3n5l0pefkuNpHo73CiPbWjcrtVfLnNTHcDjHzgLcEgco5HiZasvrmt4aP0gtR2trIBBkRT6suaXhMd6jzSxntdboF_G1SHRIlOVczdo-2u_39h68UgNe4ofYCbgULr7Qj8OZGwrJTi9J-wOP3TYLyFYSkY9CIeG5RRa1NxbrERa?width=256&height=256&cropmode=none"
-      
-    // },
-    // {
-    //   name: "Cuba2",
-    //   cost: 12.99,
-    //   image: "https://bn1304files.storage.live.com/y4mi4uGKC_rU450rqLVq_MbnYKQTOTOIIoXeGe8rKN6DcsqKrSOS2FxDY82jR-_vmv-_-jJMN3tnUDhJCMkH0L-srbHPux73pUUb12dZGfhJiqXdH65P563J02aKqVh7faHILLoTKeusC3oojlKNyTEhiLl-dYb48bDdhlQsWayVDeIS8EFG1id81KhY1ZJ87AV?width=256&height=256&cropmode=none"
-      
-    // },
-    // {
-    //   name: "Cuba3",
-    //   cost: 12.99,
-    //   image: "https://bn1304files.storage.live.com/y4m8ujG1dm3sDKjjCNW9d1aNYru8n8Ovgxt7ysIWTRc_l6X3YHrMWe-viyDqig8Ycx9i4m9ArMZ2XvjhdCYBP_st_idpLe14QHZ01X03MsfTGzW3Gxrvjm358fPjEV5KTn3bVjFNaF2rCAcWC33YXMWNXb8Y92Rxy3KfZtHCN5Q1pK6tAJ4CPJ0TIZufcEgwmIk?width=256&height=256&cropmode=none"
-      
-    // }
-  // ])
+  
