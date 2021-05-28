@@ -531,6 +531,14 @@ input{
 	display: flex;
 	justify-content: center;
 }
+.wel{
+	display: flex;
+ justify-content:center;
+ flex-direction: column;
+ align-items: center;
+ 
+ 
+}
 .box{
 	display: flex;
 	justify-content: center;
