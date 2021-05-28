@@ -22,7 +22,7 @@ const Trip = (props) => {
 		return (
 			<div id="trip-div">
 			<section id="travel-btns">
-				<Link to="/">
+				<Link to="/home">
 					<h1 id="home-link">{`<-`}</h1>
 				</Link>
 				<Link to="/">
