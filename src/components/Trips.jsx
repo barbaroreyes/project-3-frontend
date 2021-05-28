@@ -1,10 +1,9 @@
-import { url } from 'express';
+// import { url } from 'express';
 import React, { useState, useEffect } from 'react';
 
 
 
-// const PLACES_TO_VISIT = 'places to visit';
-// const ACTIVITY = 'activity';
+
 
 export default function Trips({ setCartItems, cartItems }) {
   
@@ -13,7 +12,7 @@ export default function Trips({ setCartItems, cartItems }) {
   const [error, setError] = useState(null);
   
   useEffect(() => {
-    fetch(url + "/trips/" + _id)
+    fetch(url + "/trip/" + _id)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -34,12 +33,13 @@ export default function Trips({ setCartItems, cartItems }) {
   
   return (
   <>
-      <img src={data.results[0].picture.medium} alt="random user" />
+      <img src={data.results[0].picture.medium} alt="random trip" />
       <pre>{JSON.stringify(data, null, 2)}</pre>
   </>
   );
   }
-
+// const PLACES_TO_VISIT = 'places to visit';
+// const ACTIVITY = 'activity';
 //     const [trips] = useState([
 //     {
 //       category: ACTIVITY,
@@ -106,8 +106,8 @@ export default function Trips({ setCartItems, cartItems }) {
 //       </div>
 //     </>
 //   );
-// }
 
 
+// export default Trips;
 
   
