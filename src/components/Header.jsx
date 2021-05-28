@@ -44,9 +44,7 @@ const Header = ({ activeCustomerId }, props) => {
 
 				<div className="Header__navigation-items">
 					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
+					
 
 						<li>
 							<Link to="/booking">Booking</Link>
@@ -59,6 +57,9 @@ const Header = ({ activeCustomerId }, props) => {
 						</li>
 						<li>
 							<Link to={`/trips`}>Popular Trips</Link>
+						</li>
+						<li>
+							<Link to="/about">About</Link>
 						</li>
 						<li>
 							<Link to={`/`}>LogOut</Link>

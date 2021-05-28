@@ -10,6 +10,7 @@ import Trip from "./pages/Trip";
 import Login from "./pages/Login";
 import SignUp from "./pages/signup";
 import HeaderLogin from './pages/headerlogin'
+import About from './pages/about'
 
 export const GlobalCtx = createContext(null)
 function App() {
@@ -87,6 +88,9 @@ function App() {
 				</Route>
 				<Route path="/login" render={(rp)=><Login {...rp}/> }/>
 				<Route path="/signup" render={(rp)=><SignUp {...rp}/> }/>
+				<Route path="/about">
+					<About/>
+				</Route>
 			</Switch>
 		</div>
 		</GlobalCtx.Provider>
