@@ -86,6 +86,7 @@ function App() {
 				<Route exact path="/">
 				<h1 className="wel">Welcome  To your Prefer Travel App Please Signup or Login to Find Next Trip </h1>
 					<HeaderLogin/>
+					<img className='head-image' src="https://images.unsplash.com/photo-1519055548599-6d4d129508c4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsbGluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
 				</Route>
 				<Route path="/login" render={(rp)=><Login {...rp}/> }/>
 				<Route path="/signup" render={(rp)=><SignUp {...rp}/> }/>
