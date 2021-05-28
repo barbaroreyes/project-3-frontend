@@ -1,4 +1,4 @@
-import { urlencoded } from 'express';
+import { url } from 'express';
 import React, { useState, useEffect } from 'react';
 
 
@@ -13,7 +13,7 @@ export default function Trips({ setCartItems, cartItems }) {
   const [error, setError] = useState(null);
   
   useEffect(() => {
-    fetch(url)
+    fetch(url + "/trips/" + _id)
       .then((response) => {
         if (response.ok) {
           return response.json();
