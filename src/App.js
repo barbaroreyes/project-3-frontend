@@ -1,6 +1,6 @@
 import "./App.css";
 import { Switch, Route, useHistory } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,createContext,useContext} from "react";
 import AgencyProfile from "./pages/AgencyProfile";
 import Booking from "./pages/Booking";
 import CustomerProfile from "./pages/CustomerProfile";
@@ -8,11 +8,14 @@ import Home from "./pages/Home";
 // import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
 import Login from "./pages/Login";
+import HeaderLogin from './pages/headerlogin'
 
+export const GlobalCtx = createContext(null)
 function App() {
 	/// STATE VARIABLES ///
 	const [activeCustomerId, setActiveCustomerId] = useState(null);
 	const [bookingToAdd, setBookingToAdd] = useState(null);
+	const [gState,setGState] = useState({});
 
 	let history = useHistory();
 	/// DEV VARIABLES ///
@@ -45,9 +48,10 @@ function App() {
 	}, []);
 
 	return (
+		<GlobalCtx.Provider value={{gState,setGState}}>
 		<div className="App">
 			<Switch>
-				<Route exact path="/">
+				<Route exact path="/home">
 					<Home
 						handleSelectCustomer={handleSelectCustomer}
 						activeCustomerId={activeCustomerId}
@@ -76,18 +80,16 @@ function App() {
 						activeCustomerId={activeCustomerId}
 					/>
 				</Route>
-				<Route path="/login">
-					<Login />
+				<Route exact path="/">
+					<HeaderLogin/>
 				</Route>
+				<Route path="/login"><Login /></Route>
+				<Route path="/login"><Login /></Route>
 			</Switch>
 		</div>
+		</GlobalCtx.Provider>
 	);
 }
 
 export default App;
 
-// class App extends Component {
-// 	state = {
-// 		sideDrawerOpen: false
-// 	};
-// 	render(){

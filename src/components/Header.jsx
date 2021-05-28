@@ -61,7 +61,7 @@ const Header = ({ activeCustomerId }, props) => {
 							<Link to={`/trips`}>Popular Trips</Link>
 						</li>
 						<li>
-							<Link to={`/login`}>Login</Link>
+							<Link to={`/`}>LogOut</Link>
 						</li>
 					</ul>
 				</div>
