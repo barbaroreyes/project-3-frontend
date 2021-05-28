@@ -1,6 +1,6 @@
 import React,{useState,useContext} from 'react'
 import {GlobalCtx} from '../App'
- const Login = (props) => {
+ const SignUp = (props) => {
     const {gState, setGState}= useContext(GlobalCtx)
    const {url} = gState
    const emptyUser = {
@@ -19,7 +19,7 @@ import {GlobalCtx} from '../App'
     event.preventDefault()
   const {username, password} = form
 
-   fetch(`${url}/auth/login`,{
+   fetch(`${url}/auth/signup`,{
        method: 'POST',
        headers: { 'Content-Type':'application/json'},
        body : JSON.stringify({username,password})
@@ -27,9 +27,8 @@ import {GlobalCtx} from '../App'
    .then(response => response.json())
    .then(data => {
        console.log(data)
-       setGState({...gState,token:data.token})
        setForm(emptyUser)
-       props.history.push('/home')
+       props.history.push('/login')
    })
    
 
@@ -40,11 +39,11 @@ import {GlobalCtx} from '../App'
             <form onSubmit={handleSubmit}>
                 <input type="text" name='username' value={form.username} onChange={handleChange}/>
                 <input type="password" name='password' value={form.password} onChange={handleChange}/>
-                <input type="submit" value="login"/>
+                <input type="submit" value="signup"/>
             </form>
         </div>
     )
 }
 
 
-export default Login
+export default SignUp

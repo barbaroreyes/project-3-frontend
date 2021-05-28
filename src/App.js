@@ -1,6 +1,6 @@
 import "./App.css";
 import { Switch, Route, useHistory } from "react-router-dom";
-import React, { useEffect, useState ,createContext,useContext} from "react";
+import React, { useEffect, useState ,createContext} from "react";
 import AgencyProfile from "./pages/AgencyProfile";
 import Booking from "./pages/Booking";
 import CustomerProfile from "./pages/CustomerProfile";
@@ -8,19 +8,21 @@ import Home from "./pages/Home";
 // import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
 import Login from "./pages/Login";
+import SignUp from "./pages/signup";
 import HeaderLogin from './pages/headerlogin'
 
 export const GlobalCtx = createContext(null)
 function App() {
 	/// STATE VARIABLES ///
+	const url = "https://travel-app-dg.herokuapp.com";
 	const [activeCustomerId, setActiveCustomerId] = useState(null);
 	const [bookingToAdd, setBookingToAdd] = useState(null);
-	const [gState,setGState] = useState({});
+	const [gState,setGState] = useState({url:url});
 
 	let history = useHistory();
 	/// DEV VARIABLES ///
 
-	const url = "https://travel-app-dg.herokuapp.com";
+	
 	// const devUserId = "60ae7f5a134d1a3ed0d5a818"; // set to a value valid for your dev environment
 
 	// const url = "http://localhost:4500";
@@ -83,8 +85,8 @@ function App() {
 				<Route exact path="/">
 					<HeaderLogin/>
 				</Route>
-				<Route path="/login"><Login /></Route>
-				<Route path="/login"><Login /></Route>
+				<Route path="/login" render={(rp)=><Login {...rp}/> }/>
+				<Route path="/signup"><SignUp/></Route>
 			</Switch>
 		</div>
 		</GlobalCtx.Provider>
