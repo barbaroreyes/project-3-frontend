@@ -57,24 +57,19 @@ function App() {
 		getActiveCustomer(devUserId); // TODO change this to get active user ID from login
 	}, []);
 
-//shopping cart function
- const PAGE_TRIPS = 'trips';
- const PAGE_CARTITEMS = 'cartItems';
+		//shopping cart function
+		const PAGE_TRIPS = 'trips';
+		const PAGE_CARTITEMS = 'cartItems';
 
-function App() {
- const [cartItems, setCartItems] = useState([]);
-  const [page, setPage] = useState(PAGE_TRIPS);
 
-   const navigateTo = (nextPage) => {
-     setPage(nextPage);
-   };
-   const getCartTotal = () => {
-    return cartItems.reduce(
-      (sum, { quantity }) => sum + quantity,
-      0
-    );
-   };
-//shopping cart function
+		const [cartItems, setCartItems] = useState([]);
+		const [page, setPage] = useState(PAGE_TRIPS);
+
+		const navigateTo = (nextPage) => {
+			setPage(nextPage);
+		};
+		const getCartTotal = () => {
+    
 
 
 	return (
@@ -101,7 +96,11 @@ function App() {
 			</Switch>
 		
 		
-			<div>
+			{/* <div>
+			cartItems.reduce(
+      			(sum, { quantity }) => sum + quantity, 0
+      
+	); */}
 			<header>
 				<button onClick={() => navigateTo(PAGE_CARTITEMS)}>Go to Cart ({getCartTotal()})
 				</button>
@@ -115,8 +114,8 @@ function App() {
 				<Trips cartItems={cartItems} setCartItems={setCartItems} />
 			)}
 			</div>
-		</div>
+		
 	);
-}
+};
 };
 export default App;

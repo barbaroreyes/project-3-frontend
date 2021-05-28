@@ -9,7 +9,7 @@ export default function Header (){
 		<Wrapper>
 
 			
-				<img src="https://bn1304files.storage.live.com/y4mpKzW6-2QNM2uI6ld0jlkdSsFgdtuiJZt9VayonGVsHIfgjQdE16f9-unyuwJ5nDVX5b1lqEI7X8zkdSoBDNcOCl8XolsCzKaHXGp1YLBqdTDlkaY5M7CX4pVbGuVUUSQiX8gcv6PBi3_hEMqw1tSYuELEAIour4eVbCYmG_wJMjziw9UF0gm4bzg88TOJnfU?width=250&height=250&cropmode=none" alt='picture' />
+				<img src="https://bn1304files.storage.live.com/y4mpKzW6-2QNM2uI6ld0jlkdSsFgdtuiJZt9VayonGVsHIfgjQdE16f9-unyuwJ5nDVX5b1lqEI7X8zkdSoBDNcOCl8XolsCzKaHXGp1YLBqdTDlkaY5M7CX4pVbGuVUUSQiX8gcv6PBi3_hEMqw1tSYuELEAIour4eVbCYmG_wJMjziw9UF0gm4bzg88TOJnfU?width=250&height=250&cropmode=none" alt='pic' />
 		
 
 			<MenuWrapper>
