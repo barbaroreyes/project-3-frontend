@@ -53,8 +53,9 @@ function App() {
 						activeCustomerId={activeCustomerId}
 					/>
 				</Route>
-				<Route path="/agencies/:_id">
-					<AgencyProfile activeCustomerId={activeCustomerId} />
+				<Route path="/agency/:_id">
+					<AgencyProfile url={url}
+					activeCustomerId={activeCustomerId} />
 				</Route>
 				<Route path="/users/:_id">
 					<CustomerProfile

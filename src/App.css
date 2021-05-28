@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
 /* Global variables */
 :root {
 	/* Dimensions */
@@ -25,25 +27,60 @@
 
 /* Trip page */
 
+
+#trip-div h3 {
+	font-weight: 500;
+}
+
+#trip-title {
+	font-weight: 400;
+	font-family: 'Kanit', sans-serif;
+}
+
 #home-link {
 	border: 1px solid blue;
-	width: fit-content;
-	padding: 5px;
+	width: 50px;
+	height: 50px;
+	padding-left: 5px;
 	margin-left: 8px;
-	border-radius: 10px;
+	border-radius: 50%;
 	background-color: lightblue;
 }
 
-#trip-gallery {
+#travel-btns {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
+}
+
+#share-link {
+	border: 1px solid blue;
+	width: 50px;
+	height: 50px;
+	margin-right: 8px;
+	border-radius: 50%;
+	background-color: lightblue;
+	padding: 0;
+	text-align: center;
+}
+
+#trip-page-card {
+	background-color: whitesmoke;
+	margin: 0;
+	position: relative;
+	top: 47px;
+	border-radius: 50px;
+	text-align: center;
+	padding-bottom: 20px;
+  width: 100vw;
 }
 
 .trip-pic {
-	width: 220px;
-	height: 220px;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
 	object-fit: cover;
+	z-index: -1;
 }
 
 /* Global resets */
@@ -66,10 +103,13 @@ h3 {
 	font-size: 1em;
 	font-weight: 800;
 }
+body{
+  padding: 0;
+}
 
 /* Customer Profile page*/
 
-.customer-profile {
+.customer-profile,.agency-profile {
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -78,13 +118,13 @@ h3 {
 	width: 100vw;
 	max-width: 800px;
 }
-.customer-profile header {
+.customer-profile,.agency-profile header {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
-.customer-profile section {
+.customer-profile,.agency-profile section {
 	width: 90%;
 	display: flex;
 	flex-direction: column;
