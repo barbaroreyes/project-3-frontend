@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import TripCard from "../components/UserTripCard";
+import TripCard from "../components/TripCard";
 // import { Link } from "react-router-dom";
 const CustomerProfile = (
 	{ url, handleAddBooking },

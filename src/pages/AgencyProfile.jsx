@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-import TripCard from "../components/UserTripCard";
-// import { Link } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
+import TripCard from "../components/TripCard";
+import Carousel from "../components/Carousel";
+
 
 const AgencyProfile = ({ url, handleAddBooking }, props) => {
 	console.log("agency profile props:", props);
@@ -18,8 +19,9 @@ const AgencyProfile = ({ url, handleAddBooking }, props) => {
 		if (_id) {
 			fetch(url + "/agency/" + _id)
 				.then((res) => {
-					console.log('fetch res', res)
-					return res.json()})
+					console.log("fetch res", res);
+					return res.json();
+				})
 				.then((data) => {
 					console.log("got agency data:", data.data);
 					const agency = data.data;
@@ -28,23 +30,25 @@ const AgencyProfile = ({ url, handleAddBooking }, props) => {
 						firstName: agency.name.first,
 						lastName: agency.name.last,
 					});
-					setOfferedTrips([...agency.trips_ref]);
+					// console.log("data offered trips",agency.trips_ref[0])
+					setOfferedTrips(
+						agency.trips_ref.map((trip, i) => {
+							return (
+								<TripCard
+									addClasses={"condensed-card"}
+									key={i}
+									_id={trip._id}
+									name={trip.name}
+									locationName={trip.location.name}
+									photo={trip.photos[0]}
+									handleAddBooking={handleAddBooking}
+								/>
+							);
+						})
+					);
 				});
 		}
 	};
-
-	const tripDisplay = offeredTrips.map((trip, i) => {
-		return (
-			<TripCard
-				key={i}
-				_id={trip._id}
-				name={trip.name}
-				locationName={trip.location.name}
-				photo={trip.photos[0]}
-				handleAddBooking={handleAddBooking}
-			/>
-		);
-	});
 
 	///Handle functions///
 	const handleBackButton = () => {
@@ -65,38 +69,25 @@ const AgencyProfile = ({ url, handleAddBooking }, props) => {
 			</header>
 			<section className="agency-info">
 				<img
-					className="agency-avi"
+					className="agency-logo"
 					alt={agency.agencyname}
 					src={
-						agency.avatar
-							? agency.avatar
+						agency.logo
+							? agency.logo
 							: "https://norrichs.com/img/ben_brownshirt800.jpg"
 					}
 				/>
-				<h2>{agency.firstName + " " + agency.lastName}</h2>
-				<div className="agency-socials">
-					<div className="agency-social">f</div>
-
-					<div className="agency-social">i</div>
-
-					<div className="agency-social">L</div>
+				<h2>{agency.name}</h2>
+				<div className="heading">
+					<h2>Popular Trips</h2>
+					<span className="light-link">
+						<Link to="/trips">See all</Link>
+					</span>
 				</div>
+				<Carousel id="trip-carousel">{offeredTrips}</Carousel>
 
-				<header className="agency-tabs active">
-					<div className="tab">
-						Favorites<div className="tab"></div>
-					</div>
-					<div className="tab">
-						Wallet<div className="tab"></div>
-					</div>
-					<div className="tab">
-						About<div className="tab"></div>
-					</div>
-				</header>
 				<section className="agency-trips"></section>
 			</section>
-			<section className="agency-trips">{tripDisplay}</section>
-			{/* <section>{tripList.length > 0 ? loadedTrips() : loading()}</section> */}
 		</main>
 	);
 };

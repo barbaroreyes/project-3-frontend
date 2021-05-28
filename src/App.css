@@ -168,6 +168,13 @@ section.home-content {
 }
 
 /* Agency Profile Page */
+.agency-logo {
+	max-width: 600px;
+	width: var(--avatar-diameter);
+	border-radius: calc(var(--avatar-diameter) / 2);
+	margin: 1.5em;
+}
+
 
 /* Booking page */
 
