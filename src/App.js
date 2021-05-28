@@ -84,7 +84,7 @@ function App() {
 					/>
 				</Route>
 				<Route exact path="/">
-				<h1 className="wel">Welcome  To your Prefer Travel App Please Signup or SignUp to see More</h1>
+				<h1 className="wel">Welcome  To your Prefer Travel App Please Signup or Login to Find Next Trip </h1>
 					<HeaderLogin/>
 				</Route>
 				<Route path="/login" render={(rp)=><Login {...rp}/> }/>
