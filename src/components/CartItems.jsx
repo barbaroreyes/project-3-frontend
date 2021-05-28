@@ -26,6 +26,8 @@ export default function CartItems({ cartItems, setCartItems }) {
     );
   };
 
+  
+
   return (
     <>
       <h1>Cart</h1>
