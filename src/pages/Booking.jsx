@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Trips from '../components/Trips';
-import CartItems from '../components/CartItems';
+// import CartItems from '../components/CartItems';
 
 
 const PAGE_TRIPS = 'trips';
