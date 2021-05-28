@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
 // import CartItems from '../src/components/CartItems';
-import Trips from '../src/components/Trips';
+// import Trips from '../src/components/Trips';
 
 
 function App() {
@@ -57,18 +57,7 @@ function App() {
 		getActiveCustomer(devUserId); // TODO change this to get active user ID from login
 	}, []);
 
-		//shopping cart function
-		const PAGE_TRIPS = 'trips';
-		const PAGE_CARTITEMS = 'cartItems';
-
-
-		const [cartItems, setCartItems] = useState([]);
-		const [page, setPage] = useState(PAGE_TRIPS);
-
-		const navigateTo = (nextPage) => {
-			setPage(nextPage);
-		};
-		const getCartTotal = () => {
+		
     
 
 
@@ -96,26 +85,9 @@ function App() {
 			</Switch>
 		
 		
-			{/* <div>
-			cartItems.reduce(
-      			(sum, { quantity }) => sum + quantity, 0
-      
-	); */}
-			<header>
-				<button onClick={() => navigateTo(PAGE_CARTITEMS)}>Go to Cart ({getCartTotal()})
-				</button>
-
-				<button onClick={() => navigateTo(PAGE_TRIPS)}>
-				View Trips
-				</button>
-			</header>
-		
-			{page === PAGE_TRIPS && (
-				<Trips cartItems={cartItems} setCartItems={setCartItems} />
-			)}
 			</div>
 		
 	);
 };
-};
+
 export default App;

@@ -86,11 +86,7 @@ img {
 /* Booking page */
 
 
-/* Login Page */
-
-
-
-/* .trips {
+.trips {
   display: grid;
   grid-template-columns: 1fr 1fr;
   
@@ -111,4 +107,9 @@ header {
   background-color: yellow;
   height: 70px;
   padding-top: 20px;
-}  */
+} 
+
+/* Login Page */
+
+
+

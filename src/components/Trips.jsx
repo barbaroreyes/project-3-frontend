@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import useFetch from "react-fetch-hook";
 
+
 const PLACES_TO_VISIT = 'places to visit';
 const ACTIVITY = 'activity';
 
