@@ -86,7 +86,7 @@ function App() {
 					<HeaderLogin/>
 				</Route>
 				<Route path="/login" render={(rp)=><Login {...rp}/> }/>
-				<Route path="/signup"><SignUp/></Route>
+				<Route path="/signup" render={(rp)=><SignUp {...rp}/> }/>
 			</Switch>
 		</div>
 		</GlobalCtx.Provider>
