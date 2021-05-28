@@ -7,8 +7,8 @@ import CustomerProfile from "./pages/CustomerProfile";
 import Home from "./pages/Home";
 import PopularTrips from "./pages/PopularTrips";
 import Trip from "./pages/Trip";
-// import CartItems from '../src/components/CartItems';
-// import Trips from '../src/components/Trips';
+import CartItems from '../src/components/CartItems';
+import Trips from '../src/components/Trips';
 
 
 function App() {
